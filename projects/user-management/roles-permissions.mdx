@@ -1,0 +1,35 @@
+---
+title: "Roles & Permissions"
+description: "Role-based access control system"
+---
+
+# Roles & Permissions
+
+Manage granular permissions through a flexible role system.
+
+```mermaid
+graph LR
+    A[Admin] -->|full access| D[Resources]
+    B[Manager] -->|limited access| D
+    C[User] -->|read-only| D
+    E[Guest] -->|minimal access| D
+    
+    style A fill:#ff6b6b
+    style B fill:#ffa94d
+    style C fill:#51cf66
+    style E fill:#a8e6cf
+```
+
+## Role Hierarchy
+
+- **Admin**: Full system access
+- **Manager**: Team management and reporting
+- **User**: Basic access to assigned features
+- **Guest**: Limited read-only access
+
+## Permission Types
+
+- Create, Read, Update, Delete (CRUD)
+- Resource-specific permissions
+- Time-based access control
+- IP-based restrictions

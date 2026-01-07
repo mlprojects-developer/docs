@@ -1,0 +1,49 @@
+---
+title: "Webhooks"
+description: "Real-time event delivery to external systems"
+---
+
+# Webhooks
+
+Send real-time events to external systems via webhooks.
+
+```mermaid
+sequenceDiagram
+    participant App
+    participant WebhookEngine
+    participant Retry
+    participant External
+    
+    App->>WebhookEngine: Trigger Event
+    WebhookEngine->>External: POST Event
+    alt Success
+        External-->>WebhookEngine: 200 OK
+    else Failure
+        External-->>WebhookEngine: Error
+        WebhookEngine->>Retry: Queue Retry
+        Retry->>External: Retry Later
+    end
+```
+
+## Webhook Events
+
+- User created/updated/deleted
+- Payment processed
+- Subscription changed
+- Content published
+- Error occurred
+- Custom events
+
+## Retry Policy
+
+- Exponential backoff
+- Maximum retry attempts
+- Failed event logging
+- Manual retry capability
+
+## Security Features
+
+- HMAC signature verification
+- IP whitelisting
+- Rate limiting
+- Webhook signing tokens

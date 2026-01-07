@@ -1,0 +1,46 @@
+---
+title: "Email Service"
+description: "Email notification templates and delivery"
+---
+
+# Email Service
+
+Robust email delivery system with templates and tracking.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Scheduled
+    Scheduled --> Sent
+    Sent --> Delivered
+    Delivered --> Opened
+    Delivered --> Clicked
+    Opened --> Clicked
+    Clicked --> [*]
+```
+
+## Email Features
+
+- WYSIWYG email builder
+- Template variables
+- A/B testing
+- Scheduled sending
+- Delivery monitoring
+- Bounce handling
+- Unsubscribe management
+
+## Templates Available
+
+- Welcome emails
+- Password reset
+- Billing notifications
+- User invitations
+- Report digests
+- Promotional emails
+
+## Tracking & Analytics
+
+- Open rates
+- Click tracking
+- Bounce rates
+- Engagement metrics

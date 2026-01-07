@@ -1,0 +1,35 @@
+---
+title: "Billing"
+description: "Payment processing and subscription management"
+---
+
+# Billing
+
+Comprehensive billing system for managing subscriptions, payments, and invoicing.
+
+```mermaid
+graph TD
+    A[Subscription Plans] --> B[Payment Processing]
+    B --> C[Invoice Generation]
+    C --> D[Payment History]
+    A --> E[Plan Upgrades/Downgrades]
+    E --> B
+    B --> F[Refunds & Credits]
+    D --> G[Tax Calculation]
+```
+
+## Core Features
+
+- Multiple subscription tiers
+- Automated billing cycles
+- Invoice generation and delivery
+- Payment processing via Stripe
+- Refund and credit management
+- Tax and compliance handling
+
+## Integration Points
+
+- **Payment Gateway**: Stripe integration
+- **User Management**: Customer account linking
+- **Notifications**: Payment confirmations and reminders
+- **Reporting**: Financial analytics

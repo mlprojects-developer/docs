@@ -25,72 +25,83 @@
     },
     "products": [
       {
-        "product": "Test",
-        "tabs": [
-          {
-            "tab": "Guides",
-            "groups": [
-              {
-                "group": "Getting started",
-                "pages": [
-                  "test/guides/getting-started/untitled-page",
-                  "index",
-                  "quickstart",
-                  "development"
-                ]
-              },
-              {
-                "group": "Customization",
-                "pages": [
-                  "essentials/settings",
-                  "essentials/navigation"
-                ]
-              },
-              {
-                "group": "Writing content",
-                "pages": [
-                  "essentials/markdown",
-                  "essentials/code",
-                  "essentials/images",
-                  "essentials/reusable-snippets"
-                ]
-              },
-              {
-                "group": "AI tools",
-                "pages": [
-                  "ai-tools/cursor",
-                  "ai-tools/claude-code",
-                  "ai-tools/windsurf"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "API reference",
-            "groups": [
-              {
-                "group": "API documentation",
-                "pages": [
-                  "api-reference/introduction"
-                ]
-              },
-              {
-                "group": "Endpoint examples",
-                "pages": [
-                  "api-reference/endpoint/get",
-                  "api-reference/endpoint/create",
-                  "api-reference/endpoint/delete",
-                  "api-reference/endpoint/webhook"
-                ]
-              }
-            ]
-          }
+        "product": "User Management",
+        "pages": [
+          "projects/user-management/overview",
+          "projects/user-management/authentication",
+          "projects/user-management/roles-permissions"
         ]
       },
       {
-        "product": "Product2",
+        "product": "Billing",
         "pages": [
-          "product2/test"
+          "projects/billing/overview",
+          "projects/billing/subscription-plans",
+          "projects/billing/invoicing"
+        ]
+      },
+      {
+        "product": "Analytics",
+        "pages": [
+          "projects/analytics/overview",
+          "projects/analytics/events-tracking",
+          "projects/analytics/dashboards"
+        ]
+      },
+      {
+        "product": "Integrations",
+        "pages": [
+          "projects/integrations/overview",
+          "projects/integrations/webhooks",
+          "projects/integrations/api-connectors"
+        ]
+      },
+      {
+        "product": "Notifications",
+        "pages": [
+          "projects/notifications/overview",
+          "projects/notifications/email-service",
+          "projects/notifications/push-notifications"
+        ]
+      },
+      {
+        "product": "Content Management",
+        "pages": [
+          "projects/content-management/overview",
+          "projects/content-management/media-library",
+          "projects/content-management/publishing"
+        ]
+      },
+      {
+        "product": "Security",
+        "pages": [
+          "projects/security/overview",
+          "projects/security/encryption",
+          "projects/security/audit-logging"
+        ]
+      },
+      {
+        "product": "Reporting",
+        "pages": [
+          "projects/reporting/overview",
+          "projects/reporting/custom-reports",
+          "projects/reporting/scheduled-reports"
+        ]
+      },
+      {
+        "product": "Data Management",
+        "pages": [
+          "projects/data-management/overview",
+          "projects/data-management/backups-recovery",
+          "projects/data-management/data-governance"
+        ]
+      },
+      {
+        "product": "Collaboration",
+        "pages": [
+          "projects/collaboration/overview",
+          "projects/collaboration/real-time-editing",
+          "projects/collaboration/task-management"
         ]
       }
     ]

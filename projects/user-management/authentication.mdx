@@ -1,0 +1,38 @@
+---
+title: "Authentication"
+description: "Secure authentication mechanisms"
+---
+
+# Authentication
+
+Implement secure authentication with multiple methods including password, OAuth, and SSO.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    participant AuthService
+    participant Database
+    
+    User->>App: Login Request
+    App->>AuthService: Validate Credentials
+    AuthService->>Database: Query User
+    Database-->>AuthService: User Data
+    AuthService-->>App: Token Response
+    App-->>User: Session Established
+```
+
+## Supported Methods
+
+- Email & Password
+- OAuth 2.0 (Google, GitHub, Microsoft)
+- Single Sign-On (SSO)
+- Multi-Factor Authentication (MFA)
+
+## Security Features
+
+- Password hashing with bcrypt
+- Rate limiting on login attempts
+- Session management with JWT tokens
+- Secure cookie handling
+- IP whitelisting support

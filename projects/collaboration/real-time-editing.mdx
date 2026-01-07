@@ -1,0 +1,51 @@
+---
+title: "Real-time Editing"
+description: "Collaborative document editing"
+---
+
+# Real-time Editing
+
+Synchronous document editing with conflict resolution and version control.
+
+```mermaid
+sequenceDiagram
+    participant User1
+    participant Server
+    participant User2
+    
+    User1->>Server: Edit Document
+    Server->>Server: Process Change
+    Server->>User1: Confirm
+    Server->>User2: Sync Change
+    User2->>Server: Edit Different Section
+    Server->>Server: Resolve Conflicts
+    Server->>User1: Sync Change
+    Server->>User2: Confirm
+```
+
+## Editing Features
+
+- Simultaneous editing
+- Live cursor tracking
+- Automatic conflict resolution
+- Undo/redo support
+- Version history
+- Change suggestions
+- Formatting tools
+
+## Synchronization
+
+- Real-time updates
+- Operational transformation
+- Conflict-free replicated data type
+- Latency optimization
+- Offline support
+
+## Version Control
+
+- Version history
+- Version comparison
+- Restore to previous version
+- Branching
+- Merging
+- Change attribution

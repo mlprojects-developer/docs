@@ -1,0 +1,47 @@
+---
+title: "Notifications"
+description: "Multi-channel notification system"
+---
+
+# Notifications
+
+Send notifications across multiple channels to keep users informed.
+
+```mermaid
+graph TD
+    A[Notification Engine] --> B{Channel Router}
+    B --> C[Email]
+    B --> D[SMS]
+    B --> E[Push Notifications]
+    B --> F[In-App]
+    B --> G[Webhooks]
+    C --> H[User Preferences]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+```
+
+## Notification Channels
+
+- **Email**: HTML templates, scheduling
+- **SMS**: Twilio integration, country codes
+- **Push**: Web and mobile push notifications
+- **In-App**: Toast, modal, banner notifications
+- **Webhooks**: External system integration
+
+## Features
+
+- Template management
+- Scheduling and delays
+- User preference management
+- Delivery tracking
+- Bounce handling
+- Unsubscribe management
+
+## Integration Points
+
+- **User Management**: Recipient information
+- **Billing**: Payment notifications
+- **Analytics**: Engagement tracking
+- **Integrations**: External notification dispatch

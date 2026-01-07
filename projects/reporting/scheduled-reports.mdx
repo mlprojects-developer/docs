@@ -1,0 +1,59 @@
+---
+title: "Scheduled Reports"
+description: "Automated report generation and delivery"
+---
+
+# Scheduled Reports
+
+Automate report generation and distribution on a schedule.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Scheduled
+    Scheduled --> Waiting
+    Waiting --> Trigger_Time
+    Trigger_Time --> Generate
+    Generate --> Format
+    Format --> Distribute
+    Distribute --> Archive
+    Archive --> [*]
+```
+
+## Scheduling Options
+
+- Daily
+- Weekly
+- Monthly
+- Quarterly
+- Custom intervals
+- Business days only
+- Holiday awareness
+
+## Distribution Methods
+
+- Email recipients
+- Dashboard publication
+- File storage
+- Webhook delivery
+- Slack messages
+- API endpoints
+- FTP upload
+
+## Report Features
+
+- Pre-generated caching
+- Incremental updates
+- Compression
+- Encryption
+- Signature
+- Delivery confirmation
+- Retry logic
+
+## Management
+
+- View schedule
+- Modify recipients
+- Change frequency
+- Pause/resume
+- Manual run
+- History tracking

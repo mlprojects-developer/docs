@@ -1,0 +1,40 @@
+---
+title: "Events & Tracking"
+description: "Event-based tracking system"
+---
+
+# Events & Tracking
+
+Real-time event collection and processing pipeline.
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant EventQueue
+    participant Processor
+    participant Storage
+    participant Dashboard
+    
+    Client->>EventQueue: Send Event
+    EventQueue->>Processor: Process Event
+    Processor->>Storage: Store Data
+    Storage-->>Dashboard: Query Data
+    Dashboard-->>Client: Display Metrics
+```
+
+## Event Types
+
+- Page views
+- User actions
+- API calls
+- Error events
+- Custom events
+- Performance metrics
+
+## Tracking Implementation
+
+- Client-side SDK
+- Server-side tracking
+- Batch processing
+- Real-time streaming
+- Data retention policies

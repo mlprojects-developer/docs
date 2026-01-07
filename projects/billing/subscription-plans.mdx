@@ -1,0 +1,35 @@
+---
+title: "Subscription Plans"
+description: "Manage subscription tiers and features"
+---
+
+# Subscription Plans
+
+Define and manage multiple subscription tiers for your customers.
+
+```mermaid
+graph LR
+    A["Free Plan<br/>$0/month"] --> D["Features"]
+    B["Pro Plan<br/>$29/month"] --> D
+    C["Enterprise<br/>Custom"] --> D
+    
+    A -.->|upgrade| B
+    B -.->|upgrade| C
+    C -.->|downgrade| B
+    B -.->|downgrade| A
+```
+
+## Available Tiers
+
+| Plan | Price | Users | Storage |
+|------|-------|-------|---------|
+| Free | $0 | 1 | 1GB |
+| Pro | $29 | 10 | 100GB |
+| Enterprise | Custom | Unlimited | Unlimited |
+
+## Feature Allocation
+
+- Usage limits per tier
+- Feature gating based on subscription
+- Upgrade/downgrade handling
+- Trial period management

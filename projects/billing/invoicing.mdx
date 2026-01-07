@@ -1,0 +1,35 @@
+---
+title: "Invoicing"
+description: "Invoice generation and management"
+---
+
+# Invoicing
+
+Automated invoice generation and management system.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Sent
+    Sent --> Viewed
+    Viewed --> Paid
+    Viewed --> Overdue
+    Overdue --> Paid
+    Paid --> [*]
+```
+
+## Invoice Features
+
+- Automatic generation on billing cycle
+- Customizable templates
+- Multiple payment methods
+- Recurring invoice support
+- Invoice archival and retrieval
+- Email delivery automation
+
+## Tax Compliance
+
+- Automatic tax calculation
+- Tax ID validation
+- Compliance reporting
+- Multi-currency support
