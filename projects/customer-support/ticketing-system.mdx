@@ -1,0 +1,50 @@
+---
+title: "Ticketing System"
+description: "Manage support tickets and inquiries"
+---
+
+# Ticketing System
+
+Centralized ticket management for organizing and tracking support requests.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Open
+    Open --> Assigned
+    Assigned --> In_Progress
+    In_Progress --> On_Hold
+    On_Hold --> In_Progress
+    In_Progress --> Resolved
+    Resolved --> Closed
+    Closed --> [*]
+```
+
+## Ticket Management
+
+- Auto-ticket creation
+- Priority levels
+- Assignment rules
+- SLA tracking
+- Escalation
+- Merge tickets
+- Split tickets
+- Bulk operations
+
+## Ticket Properties
+
+- Customer info
+- Priority and severity
+- Category and tags
+- Assigned agent
+- Due date
+- Status
+- Custom fields
+- Attachments
+
+## Workflows
+
+- Automatic routing
+- Round-robin assignment
+- Skill-based routing
+- VIP customer handling
+- Escalation procedures

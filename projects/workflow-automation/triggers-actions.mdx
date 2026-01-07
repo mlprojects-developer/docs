@@ -1,0 +1,46 @@
+---
+title: "Triggers & Actions"
+description: "Trigger and action configuration"
+---
+
+# Triggers & Actions
+
+Configure events that start workflows and actions that perform work.
+
+```mermaid
+graph TD
+    A[Event Types] --> B{Trigger Type}
+    B --> C[Webhook]
+    B --> D[Scheduled]
+    B --> E[User Action]
+    B --> F[System Event]
+    C --> G[Action Execution]
+    D --> G
+    E --> G
+    F --> G
+```
+
+## Trigger Types
+
+- **Event-based**: Webhook, API call
+- **Scheduled**: Cron, interval-based
+- **Manual**: User-initiated
+- **System**: Database changes, conditions met
+
+## Actions Available
+
+- Create/update records
+- Send notifications
+- Execute API calls
+- File operations
+- Data transformation
+- Conditional logic
+- Wait/delay
+- Script execution
+
+## Trigger Configuration
+
+- Event filtering
+- Payload mapping
+- Rate limiting
+- Deduplication

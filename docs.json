@@ -103,6 +103,299 @@
           "projects/collaboration/real-time-editing",
           "projects/collaboration/task-management"
         ]
+      },
+      {
+        "product": "Workflow Automation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "projects/workflow-automation/overview",
+              "projects/workflow-automation/workflow-builder",
+              "projects/workflow-automation/triggers-actions"
+            ]
+          },
+          {
+            "group": "Integration & Configuration",
+            "pages": [
+              "projects/workflow-automation/integrations",
+              "projects/workflow-automation/monitoring-logs",
+              "projects/workflow-automation/scheduled-workflows"
+            ]
+          },
+          {
+            "group": "Advanced Topics",
+            "pages": [
+              "projects/workflow-automation/error-handling",
+              "projects/workflow-automation/templates",
+              "projects/workflow-automation/advanced-features",
+              "projects/workflow-automation/best-practices"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Customer Support",
+        "groups": [
+          {
+            "group": "Core Features",
+            "pages": [
+              "projects/customer-support/overview",
+              "projects/customer-support/ticketing-system",
+              "projects/customer-support/live-chat"
+            ]
+          },
+          {
+            "group": "Self-Service & Knowledge",
+            "pages": [
+              "projects/customer-support/knowledge-base",
+              "projects/customer-support/ai-chatbot",
+              "projects/customer-support/customer-portal"
+            ]
+          },
+          {
+            "group": "Operations & Analytics",
+            "pages": [
+              "projects/customer-support/sla-management",
+              "projects/customer-support/team-collaboration",
+              "projects/customer-support/analytics-reporting",
+              "projects/customer-support/multi-language-support"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Inventory Management",
+        "groups": [
+          {
+            "group": "Core Operations",
+            "pages": [
+              "projects/inventory-management/overview",
+              "projects/inventory-management/stock-tracking",
+              "projects/inventory-management/warehouse-management"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "projects/inventory-management/barcode-management",
+              "projects/inventory-management/demand-forecasting",
+              "projects/inventory-management/supplier-management"
+            ]
+          },
+          {
+            "group": "Compliance & Analytics",
+            "pages": [
+              "projects/inventory-management/inventory-audit",
+              "projects/inventory-management/lot-expiration",
+              "projects/inventory-management/reporting-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "CRM & Sales",
+        "groups": [
+          {
+            "group": "Core Modules",
+            "pages": [
+              "projects/crm-sales/overview",
+              "projects/crm-sales/contact-management",
+              "projects/crm-sales/lead-management"
+            ]
+          },
+          {
+            "group": "Sales Operations",
+            "pages": [
+              "projects/crm-sales/opportunity-pipeline",
+              "projects/crm-sales/sales-activities",
+              "projects/crm-sales/proposals-quotes"
+            ]
+          },
+          {
+            "group": "Account & Reporting",
+            "pages": [
+              "projects/crm-sales/account-management",
+              "projects/crm-sales/sales-automation",
+              "projects/crm-sales/sales-analytics",
+              "projects/crm-sales/mobile-sales"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Human Resources",
+        "groups": [
+          {
+            "group": "Recruitment & Onboarding",
+            "pages": [
+              "projects/human-resources/overview",
+              "projects/human-resources/recruitment",
+              "projects/human-resources/employee-records",
+              "projects/human-resources/onboarding"
+            ]
+          },
+          {
+            "group": "Compensation & Time",
+            "pages": [
+              "projects/human-resources/payroll-management",
+              "projects/human-resources/time-attendance",
+              "projects/human-resources/leave-management"
+            ]
+          },
+          {
+            "group": "Performance & Development",
+            "pages": [
+              "projects/human-resources/performance-management",
+              "projects/human-resources/learning-development"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Project Management",
+        "groups": [
+          {
+            "group": "Methodologies",
+            "pages": [
+              "projects/project-management/overview",
+              "projects/project-management/agile-scrum",
+              "projects/project-management/waterfall-planning"
+            ]
+          },
+          {
+            "group": "Planning & Execution",
+            "pages": [
+              "projects/project-management/resource-management",
+              "projects/project-management/budget-cost",
+              "projects/project-management/risk-management"
+            ]
+          },
+          {
+            "group": "Monitoring & Control",
+            "pages": [
+              "projects/project-management/quality-management",
+              "projects/project-management/stakeholder-management",
+              "projects/project-management/project-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Email Marketing",
+        "groups": [
+          {
+            "group": "Campaign Management",
+            "pages": [
+              "projects/email-marketing/overview",
+              "projects/email-marketing/campaign-management",
+              "projects/email-marketing/email-templates"
+            ]
+          },
+          {
+            "group": "Audience & Personalization",
+            "pages": [
+              "projects/email-marketing/audience-segmentation",
+              "projects/email-marketing/marketing-automation",
+              "projects/email-marketing/personalization"
+            ]
+          },
+          {
+            "group": "Optimization & Delivery",
+            "pages": [
+              "projects/email-marketing/ab-testing",
+              "projects/email-marketing/deliverability",
+              "projects/email-marketing/analytics-reporting"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "API Management",
+        "groups": [
+          {
+            "group": "Core Platform",
+            "pages": [
+              "projects/api-management/overview",
+              "projects/api-management/api-gateway",
+              "projects/api-management/api-documentation"
+            ]
+          },
+          {
+            "group": "Developer Experience",
+            "pages": [
+              "projects/api-management/developer-portal",
+              "projects/api-management/versioning-lifecycle",
+              "projects/api-management/authentication-security"
+            ]
+          },
+          {
+            "group": "Operations & Monetization",
+            "pages": [
+              "projects/api-management/monitoring-analytics",
+              "projects/api-management/testing-sandbox",
+              "projects/api-management/monetization"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Customer Insights",
+        "groups": [
+          {
+            "group": "Data & Profiles",
+            "pages": [
+              "projects/customer-insights/overview",
+              "projects/customer-insights/customer-profiles",
+              "projects/customer-insights/behavior-analytics"
+            ]
+          },
+          {
+            "group": "Analysis & Predictions",
+            "pages": [
+              "projects/customer-insights/predictive-analytics",
+              "projects/customer-insights/segmentation",
+              "projects/customer-insights/customer-journey"
+            ]
+          },
+          {
+            "group": "Engagement & Reports",
+            "pages": [
+              "projects/customer-insights/sentiment-analysis",
+              "projects/customer-insights/retention-churn",
+              "projects/customer-insights/insights-reports"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Mobile App Management",
+        "groups": [
+          {
+            "group": "Device & App Management",
+            "pages": [
+              "projects/mobile-app-management/overview",
+              "projects/mobile-app-management/device-management",
+              "projects/mobile-app-management/app-distribution"
+            ]
+          },
+          {
+            "group": "Security & Analytics",
+            "pages": [
+              "projects/mobile-app-management/mobile-security",
+              "projects/mobile-app-management/mobile-analytics",
+              "projects/mobile-app-management/push-notifications"
+            ]
+          },
+          {
+            "group": "User Experience & Compliance",
+            "pages": [
+              "projects/mobile-app-management/mobile-support-help",
+              "projects/mobile-app-management/offline-functionality",
+              "projects/mobile-app-management/compliance-audit"
+            ]
+          }
+        ]
       }
     ]
   },

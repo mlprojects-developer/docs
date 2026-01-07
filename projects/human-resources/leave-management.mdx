@@ -1,0 +1,62 @@
+---
+title: "Leave Management"
+description: "Manage employee leave and absences"
+---
+
+# Leave Management
+
+Employee leave and absence management system.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Submit
+    Submit --> Pending
+    Pending --> Approved
+    Pending --> Rejected
+    Approved --> Taken
+    Rejected --> [*]
+    Taken --> Completed
+    Completed --> [*]
+```
+
+## Leave Types
+
+- Paid time off
+- Vacation leave
+- Sick leave
+- Personal leave
+- Maternity leave
+- Paternity leave
+- Sabbatical
+- Unpaid leave
+
+## Leave Management
+
+- Leave requests
+- Approval workflows
+- Approval chain
+- Compliance check
+- Balance tracking
+- Accrual calculation
+- Carryover policies
+- Payout on exit
+
+## Features
+
+- Self-service requests
+- Mobile requests
+- Calendar view
+- Team calendar
+- Bulk requests
+- Backup assignment
+- Notification system
+- Leave history
+
+## Compliance
+
+- Leave policies
+- Legal requirements
+- Accrual rules
+- Carryover limits
+- Usage tracking
+- Audit trails

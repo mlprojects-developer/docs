@@ -1,0 +1,48 @@
+---
+title: "Monitoring & Logs"
+description: "Track workflow execution and debug issues"
+---
+
+# Monitoring & Logs
+
+Comprehensive monitoring and logging for workflow execution and troubleshooting.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Started
+    Started --> Running
+    Running --> Completed
+    Running --> Failed
+    Running --> Paused
+    Paused --> Running
+    Failed --> Retry
+    Retry --> Running
+    Completed --> [*]
+    Failed --> [*]
+```
+
+## Monitoring Features
+
+- Real-time execution status
+- Performance metrics
+- Success/failure rates
+- Execution timeline
+- Step-by-step logs
+- Variable inspection
+- Error tracking
+
+## Log Types
+
+- Execution logs
+- Error logs
+- Debug logs
+- Audit logs
+- Performance logs
+- Integration logs
+
+## Alerts & Notifications
+
+- Workflow failures
+- Timeout alerts
+- Performance warnings
+- Integration errors

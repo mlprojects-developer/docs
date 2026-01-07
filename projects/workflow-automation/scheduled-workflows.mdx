@@ -1,0 +1,46 @@
+---
+title: "Scheduled Workflows"
+description: "Schedule workflows to run at specific times"
+---
+
+# Scheduled Workflows
+
+Run workflows on a schedule using flexible scheduling options.
+
+```mermaid
+graph LR
+    A[Schedule] --> B[Cron Expression]
+    A --> C[Frequency]
+    A --> D[Time Zone]
+    B --> E[Next Run]
+    C --> E
+    D --> E
+    E --> F[Execution]
+```
+
+## Scheduling Options
+
+- One-time execution
+- Recurring daily
+- Recurring weekly
+- Recurring monthly
+- Custom cron expressions
+- Business day only
+- Time zone aware
+
+## Schedule Management
+
+- View schedule
+- Modify schedule
+- Pause/resume
+- Skip next run
+- Manual trigger
+- Historical executions
+
+## Features
+
+- Daylight saving time handling
+- Holiday calendars
+- Timezone conversion
+- Execution history
+- Missed execution handling

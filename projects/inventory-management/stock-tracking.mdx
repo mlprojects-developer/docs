@@ -1,0 +1,48 @@
+---
+title: "Stock Tracking"
+description: "Real-time stock level monitoring"
+---
+
+# Stock Tracking
+
+Monitor inventory levels across warehouses in real-time.
+
+```mermaid
+graph LR
+    A[Stock Event] --> B[Quantity Update]
+    B --> C[Threshold Check]
+    C --> D{Low Stock?}
+    D -->|Yes| E[Generate Alert]
+    D -->|No| F[Update Dashboard]
+    E --> G[Replenishment]
+```
+
+## Tracking Features
+
+- Current stock levels
+- Available quantity
+- Allocated quantity
+- On-order quantity
+- Stock movements
+- Stock history
+- Variance tracking
+- Location details
+
+## Stock Information
+
+- SKU details
+- Product name
+- Cost
+- Selling price
+- Reorder point
+- Reorder quantity
+- Lead time
+- Expiration date
+
+## Alerts
+
+- Low stock warnings
+- Out of stock alerts
+- Overstock warnings
+- Variance alerts
+- Expiration alerts
