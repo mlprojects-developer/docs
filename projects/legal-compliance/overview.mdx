@@ -1,0 +1,67 @@
+---
+title: "Legal Compliance"
+description: "Legal and compliance management"
+---
+
+# Legal Compliance
+
+Enterprise legal and compliance management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Compliance Management System Context
+    Person(manager, "Compliance Manager", "Manages compliance")
+    Person(auditor, "Auditor", "Audits compliance")
+    System(compliance, "Compliance Platform", "Policy and audit management")
+    System_Ext(ldap, "Directory Service", "User management")
+    System_Ext(email, "Email Service", "Alerts and reports")
+    
+    Rel(manager, compliance, "Manages")
+    Rel(auditor, compliance, "Audits")
+    Rel(compliance, ldap, "Authenticates")
+    Rel(compliance, email, "Sends alerts")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Compliance Platform Containers
+    System_Boundary(comp, "Compliance Platform") {
+        Container(web, "Management Portal", "React", "Compliance oversight")
+        Container(api, "API Server", "Node.js", "Compliance logic")
+        Container(audit, "Audit Engine", "Python", "Audit trail logging")
+        ContainerDb(db, "Database", "PostgreSQL", "Policies and logs")
+        Container(alert, "Alert Service", "Java", "Compliance alerts")
+    }
+    System_Ext(crm, "CRM", "Customer data")
+    
+    Rel(web, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(audit, db, "Logs")
+    Rel(api, alert, "Triggers")
+    Rel(api, crm, "Queries")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Policy] --> B[Implementation]
+    B --> C[Monitoring]
+    C --> D[Reporting]
+    D --> E[Audit]
+```
+
+## Features
+
+- Regulatory tracking
+- Policy management
+- Compliance checklists
+- Document management
+- Audit trails
+- Risk assessment
+- Incident tracking
+- Training management

@@ -1,0 +1,67 @@
+---
+title: "Maintenance Management"
+description: "Maintenance operations"
+---
+
+# Maintenance Management
+
+Maintenance operations and management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Maintenance Management System Context
+    Person(tech, "Maintenance Tech", "Performs maintenance")
+    Person(planner, "Maintenance Planner", "Plans work")
+    System(mm, "Maintenance Platform", "Work order management")
+    System_Ext(assets, "Asset System", "Asset data")
+    System_Ext(parts, "Inventory System", "Spare parts")
+    
+    Rel(tech, mm, "Updates")
+    Rel(planner, mm, "Schedules")
+    Rel(mm, assets, "Syncs")
+    Rel(mm, parts, "Requests")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Maintenance Platform Containers
+    System_Boundary(mm, "Maintenance Platform") {
+        Container(portal, "Maintenance Portal", "React", "Schedule work")
+        Container(mobile, "Technician App", "React Native", "Work execution")
+        Container(api, "API Server", "Node.js", "Maintenance logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Work orders")
+        Container(planning, "Planning Engine", "Python", "Predictive maintenance")
+    }
+    System_Ext(assets, "Assets", "Asset System")
+    
+    Rel(portal, api, "REST")
+    Rel(mobile, api, "REST")
+    Rel(api, planning, "RPC")
+    Rel(planning, db, "Reads")
+    Rel(api, assets, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Maintenance Request] --> B[Schedule]
+    B --> C[Execute]
+    C --> D[Document]
+    D --> E[Analyze]
+```
+
+## Features
+
+- Preventive maintenance
+- Predictive maintenance
+- Work order management
+- Technician scheduling
+- Parts management
+- Equipment history
+- Compliance tracking
+- Maintenance analytics

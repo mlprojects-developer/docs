@@ -25,11 +25,61 @@
     },
     "products": [
       {
-        "product": "User Management",
+        "product": "Analytics",
         "pages": [
-          "projects/user-management/overview",
-          "projects/user-management/authentication",
-          "projects/user-management/roles-permissions"
+          "projects/analytics/overview",
+          "projects/analytics/events-tracking",
+          "projects/analytics/dashboards"
+        ]
+      },
+      {
+        "product": "API Management",
+        "groups": [
+          {
+            "group": "Core Platform",
+            "pages": [
+              "projects/api-management/overview",
+              "projects/api-management/api-gateway",
+              "projects/api-management/api-documentation"
+            ]
+          },
+          {
+            "group": "Developer Experience",
+            "pages": [
+              "projects/api-management/developer-portal",
+              "projects/api-management/versioning-lifecycle",
+              "projects/api-management/authentication-security"
+            ]
+          },
+          {
+            "group": "Operations & Monetization",
+            "pages": [
+              "projects/api-management/monitoring-analytics",
+              "projects/api-management/testing-sandbox",
+              "projects/api-management/monetization"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Asset Management",
+        "groups": [
+          {
+            "group": "Asset Lifecycle",
+            "pages": [
+              "projects/asset-management/overview",
+              "projects/asset-management/asset-tracking",
+              "projects/asset-management/maintenance-management"
+            ]
+          },
+          {
+            "group": "Accounting & Compliance",
+            "pages": [
+              "projects/asset-management/depreciation-accounting",
+              "projects/asset-management/compliance-certification",
+              "projects/asset-management/analytics-reporting"
+            ]
+          }
         ]
       },
       {
@@ -41,27 +91,11 @@
         ]
       },
       {
-        "product": "Analytics",
+        "product": "Collaboration",
         "pages": [
-          "projects/analytics/overview",
-          "projects/analytics/events-tracking",
-          "projects/analytics/dashboards"
-        ]
-      },
-      {
-        "product": "Integrations",
-        "pages": [
-          "projects/integrations/overview",
-          "projects/integrations/webhooks",
-          "projects/integrations/api-connectors"
-        ]
-      },
-      {
-        "product": "Notifications",
-        "pages": [
-          "projects/notifications/overview",
-          "projects/notifications/email-service",
-          "projects/notifications/push-notifications"
+          "projects/collaboration/overview",
+          "projects/collaboration/real-time-editing",
+          "projects/collaboration/task-management"
         ]
       },
       {
@@ -73,122 +107,22 @@
         ]
       },
       {
-        "product": "Security",
-        "pages": [
-          "projects/security/overview",
-          "projects/security/encryption",
-          "projects/security/audit-logging"
-        ]
-      },
-      {
-        "product": "Reporting",
-        "pages": [
-          "projects/reporting/overview",
-          "projects/reporting/custom-reports",
-          "projects/reporting/scheduled-reports"
-        ]
-      },
-      {
-        "product": "Data Management",
-        "pages": [
-          "projects/data-management/overview",
-          "projects/data-management/backups-recovery",
-          "projects/data-management/data-governance"
-        ]
-      },
-      {
-        "product": "Collaboration",
-        "pages": [
-          "projects/collaboration/overview",
-          "projects/collaboration/real-time-editing",
-          "projects/collaboration/task-management"
-        ]
-      },
-      {
-        "product": "Workflow Automation",
+        "product": "Contract Management",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Contract Lifecycle",
             "pages": [
-              "projects/workflow-automation/overview",
-              "projects/workflow-automation/workflow-builder",
-              "projects/workflow-automation/triggers-actions"
+              "projects/contract-management/overview",
+              "projects/contract-management/contract-creation",
+              "projects/contract-management/signature-management"
             ]
           },
           {
-            "group": "Integration & Configuration",
+            "group": "Execution & Analysis",
             "pages": [
-              "projects/workflow-automation/integrations",
-              "projects/workflow-automation/monitoring-logs",
-              "projects/workflow-automation/scheduled-workflows"
-            ]
-          },
-          {
-            "group": "Advanced Topics",
-            "pages": [
-              "projects/workflow-automation/error-handling",
-              "projects/workflow-automation/templates",
-              "projects/workflow-automation/advanced-features",
-              "projects/workflow-automation/best-practices"
-            ]
-          }
-        ]
-      },
-      {
-        "product": "Customer Support",
-        "groups": [
-          {
-            "group": "Core Features",
-            "pages": [
-              "projects/customer-support/overview",
-              "projects/customer-support/ticketing-system",
-              "projects/customer-support/live-chat"
-            ]
-          },
-          {
-            "group": "Self-Service & Knowledge",
-            "pages": [
-              "projects/customer-support/knowledge-base",
-              "projects/customer-support/ai-chatbot",
-              "projects/customer-support/customer-portal"
-            ]
-          },
-          {
-            "group": "Operations & Analytics",
-            "pages": [
-              "projects/customer-support/sla-management",
-              "projects/customer-support/team-collaboration",
-              "projects/customer-support/analytics-reporting",
-              "projects/customer-support/multi-language-support"
-            ]
-          }
-        ]
-      },
-      {
-        "product": "Inventory Management",
-        "groups": [
-          {
-            "group": "Core Operations",
-            "pages": [
-              "projects/inventory-management/overview",
-              "projects/inventory-management/stock-tracking",
-              "projects/inventory-management/warehouse-management"
-            ]
-          },
-          {
-            "group": "Advanced Features",
-            "pages": [
-              "projects/inventory-management/barcode-management",
-              "projects/inventory-management/demand-forecasting",
-              "projects/inventory-management/supplier-management"
-            ]
-          },
-          {
-            "group": "Compliance & Analytics",
-            "pages": [
-              "projects/inventory-management/inventory-audit",
-              "projects/inventory-management/lot-expiration",
-              "projects/inventory-management/reporting-analytics"
+              "projects/contract-management/obligation-tracking",
+              "projects/contract-management/renewal-management",
+              "projects/contract-management/analytics-reporting"
             ]
           }
         ]
@@ -224,59 +158,140 @@
         ]
       },
       {
-        "product": "Human Resources",
+        "product": "Customer Insights",
         "groups": [
           {
-            "group": "Recruitment & Onboarding",
+            "group": "Data & Profiles",
             "pages": [
-              "projects/human-resources/overview",
-              "projects/human-resources/recruitment",
-              "projects/human-resources/employee-records",
-              "projects/human-resources/onboarding"
+              "projects/customer-insights/overview",
+              "projects/customer-insights/customer-profiles",
+              "projects/customer-insights/behavior-analytics"
             ]
           },
           {
-            "group": "Compensation & Time",
+            "group": "Analysis & Predictions",
             "pages": [
-              "projects/human-resources/payroll-management",
-              "projects/human-resources/time-attendance",
-              "projects/human-resources/leave-management"
+              "projects/customer-insights/predictive-analytics",
+              "projects/customer-insights/segmentation",
+              "projects/customer-insights/customer-journey"
             ]
           },
           {
-            "group": "Performance & Development",
+            "group": "Engagement & Reports",
             "pages": [
-              "projects/human-resources/performance-management",
-              "projects/human-resources/learning-development"
+              "projects/customer-insights/sentiment-analysis",
+              "projects/customer-insights/retention-churn",
+              "projects/customer-insights/insights-reports"
             ]
           }
         ]
       },
       {
-        "product": "Project Management",
+        "product": "Customer Support",
         "groups": [
           {
-            "group": "Methodologies",
+            "group": "Core Features",
             "pages": [
-              "projects/project-management/overview",
-              "projects/project-management/agile-scrum",
-              "projects/project-management/waterfall-planning"
+              "projects/customer-support/overview",
+              "projects/customer-support/ticketing-system",
+              "projects/customer-support/live-chat"
             ]
           },
           {
-            "group": "Planning & Execution",
+            "group": "Self-Service & Knowledge",
             "pages": [
-              "projects/project-management/resource-management",
-              "projects/project-management/budget-cost",
-              "projects/project-management/risk-management"
+              "projects/customer-support/knowledge-base",
+              "projects/customer-support/ai-chatbot",
+              "projects/customer-support/customer-portal"
             ]
           },
           {
-            "group": "Monitoring & Control",
+            "group": "Operations & Analytics",
             "pages": [
-              "projects/project-management/quality-management",
-              "projects/project-management/stakeholder-management",
-              "projects/project-management/project-analytics"
+              "projects/customer-support/sla-management",
+              "projects/customer-support/team-collaboration",
+              "projects/customer-support/analytics-reporting",
+              "projects/customer-support/multi-language-support"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Data Management",
+        "pages": [
+          "projects/data-management/overview",
+          "projects/data-management/backups-recovery",
+          "projects/data-management/data-governance"
+        ]
+      },
+      {
+        "product": "Demand Planning",
+        "groups": [
+          {
+            "group": "Forecasting & Planning",
+            "pages": [
+              "projects/demand-planning/overview",
+              "projects/demand-planning/forecasting",
+              "projects/demand-planning/inventory-planning"
+            ]
+          },
+          {
+            "group": "Supply & Collaboration",
+            "pages": [
+              "projects/demand-planning/supply-planning",
+              "projects/demand-planning/collaboration",
+              "projects/demand-planning/analytics-performance"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Document Management",
+        "groups": [
+          {
+            "group": "Storage & Organization",
+            "pages": [
+              "projects/document-management/overview",
+              "projects/document-management/document-storage",
+              "projects/document-management/version-control"
+            ]
+          },
+          {
+            "group": "Collaboration & Retrieval",
+            "pages": [
+              "projects/document-management/sharing-collaboration",
+              "projects/document-management/search-retrieval",
+              "projects/document-management/compliance-security"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "E-Commerce",
+        "groups": [
+          {
+            "group": "Store Setup",
+            "pages": [
+              "projects/ecommerce/overview",
+              "projects/ecommerce/store-setup",
+              "projects/ecommerce/product-management"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "projects/ecommerce/orders-fulfillment",
+              "projects/ecommerce/payments",
+              "projects/ecommerce/promotions"
+            ]
+          },
+          {
+            "group": "Analytics & Marketing",
+            "pages": [
+              "projects/ecommerce/analytics",
+              "projects/ecommerce/marketing-tools",
+              "projects/ecommerce/customer-management",
+              "projects/ecommerce/reviews-ratings"
             ]
           }
         ]
@@ -311,59 +326,255 @@
         ]
       },
       {
-        "product": "API Management",
+        "product": "Expense Management",
         "groups": [
           {
-            "group": "Core Platform",
+            "group": "Submission & Approval",
             "pages": [
-              "projects/api-management/overview",
-              "projects/api-management/api-gateway",
-              "projects/api-management/api-documentation"
+              "projects/expense-management/overview",
+              "projects/expense-management/expense-submission",
+              "projects/expense-management/approval-workflow"
             ]
           },
           {
-            "group": "Developer Experience",
+            "group": "Policy & Processing",
             "pages": [
-              "projects/api-management/developer-portal",
-              "projects/api-management/versioning-lifecycle",
-              "projects/api-management/authentication-security"
-            ]
-          },
-          {
-            "group": "Operations & Monetization",
-            "pages": [
-              "projects/api-management/monitoring-analytics",
-              "projects/api-management/testing-sandbox",
-              "projects/api-management/monetization"
+              "projects/expense-management/policy-management",
+              "projects/expense-management/reimbursement",
+              "projects/expense-management/analytics"
             ]
           }
         ]
       },
       {
-        "product": "Customer Insights",
+        "product": "Field Service",
         "groups": [
           {
-            "group": "Data & Profiles",
+            "group": "Scheduling & Dispatch",
             "pages": [
-              "projects/customer-insights/overview",
-              "projects/customer-insights/customer-profiles",
-              "projects/customer-insights/behavior-analytics"
+              "projects/field-service/overview",
+              "projects/field-service/scheduling-dispatch",
+              "projects/field-service/mobile-workforce"
             ]
           },
           {
-            "group": "Analysis & Predictions",
+            "group": "Operations & Support",
             "pages": [
-              "projects/customer-insights/predictive-analytics",
-              "projects/customer-insights/segmentation",
-              "projects/customer-insights/customer-journey"
+              "projects/field-service/inventory-parts",
+              "projects/field-service/customer-communication",
+              "projects/field-service/analytics-operations"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Finance & Accounting",
+        "groups": [
+          {
+            "group": "Core Accounting",
+            "pages": [
+              "projects/finance-accounting/overview",
+              "projects/finance-accounting/accounts-payable",
+              "projects/finance-accounting/accounts-receivable"
             ]
           },
           {
-            "group": "Engagement & Reports",
+            "group": "Reporting & Compliance",
             "pages": [
-              "projects/customer-insights/sentiment-analysis",
-              "projects/customer-insights/retention-churn",
-              "projects/customer-insights/insights-reports"
+              "projects/finance-accounting/general-ledger",
+              "projects/finance-accounting/financial-reporting",
+              "projects/finance-accounting/tax-compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Human Resources",
+        "groups": [
+          {
+            "group": "Recruitment & Onboarding",
+            "pages": [
+              "projects/human-resources/overview",
+              "projects/human-resources/recruitment",
+              "projects/human-resources/employee-records",
+              "projects/human-resources/onboarding"
+            ]
+          },
+          {
+            "group": "Compensation & Time",
+            "pages": [
+              "projects/human-resources/payroll-management",
+              "projects/human-resources/time-attendance",
+              "projects/human-resources/leave-management"
+            ]
+          },
+          {
+            "group": "Performance & Development",
+            "pages": [
+              "projects/human-resources/performance-management",
+              "projects/human-resources/learning-development"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Integrations",
+        "pages": [
+          "projects/integrations/overview",
+          "projects/integrations/webhooks",
+          "projects/integrations/api-connectors"
+        ]
+      },
+      {
+        "product": "Inventory Management",
+        "groups": [
+          {
+            "group": "Core Operations",
+            "pages": [
+              "projects/inventory-management/overview",
+              "projects/inventory-management/stock-tracking",
+              "projects/inventory-management/warehouse-management"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "projects/inventory-management/barcode-management",
+              "projects/inventory-management/demand-forecasting",
+              "projects/inventory-management/supplier-management"
+            ]
+          },
+          {
+            "group": "Compliance & Analytics",
+            "pages": [
+              "projects/inventory-management/inventory-audit",
+              "projects/inventory-management/lot-expiration",
+              "projects/inventory-management/reporting-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Knowledge Management",
+        "groups": [
+          {
+            "group": "Content Management",
+            "pages": [
+              "projects/knowledge-management/overview",
+              "projects/knowledge-management/content-creation",
+              "projects/knowledge-management/organization"
+            ]
+          },
+          {
+            "group": "Discovery & Access",
+            "pages": [
+              "projects/knowledge-management/search-discovery",
+              "projects/knowledge-management/access-control",
+              "projects/knowledge-management/analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Legal Compliance",
+        "groups": [
+          {
+            "group": "Governance & Policy",
+            "pages": [
+              "projects/legal-compliance/overview",
+              "projects/legal-compliance/regulatory-management",
+              "projects/legal-compliance/policy-management"
+            ]
+          },
+          {
+            "group": "Risk & Audit",
+            "pages": [
+              "projects/legal-compliance/risk-assessment",
+              "projects/legal-compliance/audit-monitoring",
+              "projects/legal-compliance/incident-management"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Loyalty & Rewards",
+        "groups": [
+          {
+            "group": "Program Management",
+            "pages": [
+              "projects/loyalty-rewards/overview",
+              "projects/loyalty-rewards/points-rewards",
+              "projects/loyalty-rewards/member-tiers"
+            ]
+          },
+          {
+            "group": "Engagement & Retention",
+            "pages": [
+              "projects/loyalty-rewards/engagement",
+              "projects/loyalty-rewards/analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Maintenance Management",
+        "groups": [
+          {
+            "group": "Planning & Execution",
+            "pages": [
+              "projects/maintenance-management/overview",
+              "projects/maintenance-management/preventive-maintenance",
+              "projects/maintenance-management/work-order-management"
+            ]
+          },
+          {
+            "group": "Assets & Compliance",
+            "pages": [
+              "projects/maintenance-management/asset-management",
+              "projects/maintenance-management/compliance-safety",
+              "projects/maintenance-management/analytics-optimization"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Manufacturing",
+        "groups": [
+          {
+            "group": "Production Planning",
+            "pages": [
+              "projects/manufacturing/overview",
+              "projects/manufacturing/production-planning",
+              "projects/manufacturing/shop-floor-control"
+            ]
+          },
+          {
+            "group": "Quality & Equipment",
+            "pages": [
+              "projects/manufacturing/quality-control",
+              "projects/manufacturing/equipment-management",
+              "projects/manufacturing/analytics-reporting"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Marketplace",
+        "groups": [
+          {
+            "group": "Seller Management",
+            "pages": [
+              "projects/marketplace/overview",
+              "projects/marketplace/seller-management",
+              "projects/marketplace/product-catalog"
+            ]
+          },
+          {
+            "group": "Buyer Experience",
+            "pages": [
+              "projects/marketplace/buyer-experience",
+              "projects/marketplace/orders-fulfillment",
+              "projects/marketplace/analytics"
             ]
           }
         ]
@@ -393,6 +604,223 @@
               "projects/mobile-app-management/mobile-support-help",
               "projects/mobile-app-management/offline-functionality",
               "projects/mobile-app-management/compliance-audit"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Notifications",
+        "pages": [
+          "projects/notifications/overview",
+          "projects/notifications/email-service",
+          "projects/notifications/push-notifications"
+        ]
+      },
+      {
+        "product": "Procurement",
+        "groups": [
+          {
+            "group": "Request & Sourcing",
+            "pages": [
+              "projects/procurement/overview",
+              "projects/procurement/request-approval",
+              "projects/procurement/vendor-selection"
+            ]
+          },
+          {
+            "group": "Orders & Fulfillment",
+            "pages": [
+              "projects/procurement/purchase-orders",
+              "projects/procurement/receiving-invoicing",
+              "projects/procurement/analytics-compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Project Management",
+        "groups": [
+          {
+            "group": "Methodologies",
+            "pages": [
+              "projects/project-management/overview",
+              "projects/project-management/agile-scrum",
+              "projects/project-management/waterfall-planning"
+            ]
+          },
+          {
+            "group": "Planning & Execution",
+            "pages": [
+              "projects/project-management/resource-management",
+              "projects/project-management/budget-cost",
+              "projects/project-management/risk-management"
+            ]
+          },
+          {
+            "group": "Monitoring & Control",
+            "pages": [
+              "projects/project-management/quality-management",
+              "projects/project-management/stakeholder-management",
+              "projects/project-management/project-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Quality Assurance",
+        "groups": [
+          {
+            "group": "Testing & Defects",
+            "pages": [
+              "projects/quality-assurance/overview",
+              "projects/quality-assurance/test-management",
+              "projects/quality-assurance/defect-management"
+            ]
+          },
+          {
+            "group": "Metrics & Automation",
+            "pages": [
+              "projects/quality-assurance/quality-metrics",
+              "projects/quality-assurance/automation",
+              "projects/quality-assurance/compliance-standards"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Reporting",
+        "pages": [
+          "projects/reporting/overview",
+          "projects/reporting/custom-reports",
+          "projects/reporting/scheduled-reports"
+        ]
+      },
+      {
+        "product": "Resource Planning",
+        "groups": [
+          {
+            "group": "Planning & Allocation",
+            "pages": [
+              "projects/resource-planning/overview",
+              "projects/resource-planning/capacity-planning",
+              "projects/resource-planning/resource-allocation"
+            ]
+          },
+          {
+            "group": "Tracking & Optimization",
+            "pages": [
+              "projects/resource-planning/utilization-tracking",
+              "projects/resource-planning/skill-management",
+              "projects/resource-planning/analytics-optimization"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Security",
+        "pages": [
+          "projects/security/overview",
+          "projects/security/encryption",
+          "projects/security/audit-logging"
+        ]
+      },
+      {
+        "product": "Subscription Management",
+        "groups": [
+          {
+            "group": "Plans & Configuration",
+            "pages": [
+              "projects/subscription-management/overview",
+              "projects/subscription-management/subscription-plans",
+              "projects/subscription-management/customer-management"
+            ]
+          },
+          {
+            "group": "Billing & Lifecycle",
+            "pages": [
+              "projects/subscription-management/billing-payments",
+              "projects/subscription-management/churn-prevention",
+              "projects/subscription-management/analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Supply Chain",
+        "groups": [
+          {
+            "group": "Network & Suppliers",
+            "pages": [
+              "projects/supply-chain/overview",
+              "projects/supply-chain/supplier-management",
+              "projects/supply-chain/logistics-management"
+            ]
+          },
+          {
+            "group": "Inventory & Visibility",
+            "pages": [
+              "projects/supply-chain/inventory-management",
+              "projects/supply-chain/visibility-tracking",
+              "projects/supply-chain/analytics-optimization"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "User Management",
+        "pages": [
+          "projects/user-management/overview",
+          "projects/user-management/authentication",
+          "projects/user-management/roles-permissions"
+        ]
+      },
+      {
+        "product": "Vendor Management",
+        "groups": [
+          {
+            "group": "Vendor Operations",
+            "pages": [
+              "projects/vendor-management/overview",
+              "projects/vendor-management/vendor-onboarding",
+              "projects/vendor-management/performance-management"
+            ]
+          },
+          {
+            "group": "Engagement & Compliance",
+            "pages": [
+              "projects/vendor-management/communication",
+              "projects/vendor-management/risk-management",
+              "projects/vendor-management/compliance-governance"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Workflow Automation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "projects/workflow-automation/overview",
+              "projects/workflow-automation/workflow-builder",
+              "projects/workflow-automation/triggers-actions"
+            ]
+          },
+          {
+            "group": "Integration & Configuration",
+            "pages": [
+              "projects/workflow-automation/integrations",
+              "projects/workflow-automation/monitoring-logs",
+              "projects/workflow-automation/scheduled-workflows"
+            ]
+          },
+          {
+            "group": "Advanced Topics",
+            "pages": [
+              "projects/workflow-automation/error-handling",
+              "projects/workflow-automation/templates",
+              "projects/workflow-automation/advanced-features",
+              "projects/workflow-automation/best-practices"
             ]
           }
         ]

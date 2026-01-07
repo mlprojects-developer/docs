@@ -1,0 +1,67 @@
+---
+title: "Vendor Management"
+description: "Vendor lifecycle management"
+---
+
+# Vendor Management
+
+Vendor and supplier management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Vendor Management System Context
+    Person(buyer, "Buyer", "Manages vendors")
+    Person(vendor, "Vendor", "Submits proposals and reports")
+    System(vm, "Vendor Platform", "Vendor relationship management")
+    System_Ext(erp, "ERP System", "Purchase orders")
+    System_Ext(email, "Email Service", "Communications")
+    
+    Rel(buyer, vm, "Manages")
+    Rel(vendor, vm, "Communicates")
+    Rel(vm, erp, "Syncs data")
+    Rel(vm, email, "Sends notifications")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Vendor Platform Containers
+    System_Boundary(vm, "Vendor Platform") {
+        Container(portal, "Vendor Portal", "React", "Vendor information")
+        Container(buyer_app, "Buyer App", "React", "Manage vendors")
+        Container(api, "API Server", "Node.js", "Vendor operations")
+        ContainerDb(db, "Database", "PostgreSQL", "Vendor data")
+        Container(analytics, "Performance Analytics", "Python", "Scoring and reports")
+    }
+    System_Ext(erp, "ERP", "SAP")
+    
+    Rel(portal, api, "REST")
+    Rel(buyer_app, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(analytics, db, "Reads")
+    Rel(api, erp, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Onboard] --> B[Evaluate]
+    B --> C[Manage]
+    C --> D[Performance]
+    D --> E[Relationship]
+```
+
+## Features
+
+- Vendor database
+- Onboarding workflow
+- Performance metrics
+- Risk assessment
+- Contract tracking
+- Communication hub
+- Payment processing
+- Compliance tracking

@@ -1,0 +1,67 @@
+---
+title: "Loyalty & Rewards"
+description: "Customer loyalty and rewards program"
+---
+
+# Loyalty & Rewards
+
+Loyalty program and customer rewards management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Loyalty & Rewards System Context
+    Person(member, "Program Member", "Earns and redeems points")
+    System(loyalty, "Loyalty Platform", "Points and rewards management")
+    System_Ext(ecom, "E-Commerce System", "Tracks purchases")
+    System_Ext(crm, "CRM System", "Customer data")
+    System_Ext(email, "Email Service", "Engagement campaigns")
+    
+    Rel(member, loyalty, "Participates")
+    Rel(ecom, loyalty, "Sends purchase data")
+    Rel(loyalty, crm, "Syncs member data")
+    Rel(loyalty, email, "Sends offers")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Loyalty Platform Containers
+    System_Boundary(loyalty, "Loyalty Platform") {
+        Container(web, "Member Portal", "React", "View points and rewards")
+        Container(api, "API Gateway", "Node.js", "Business logic")
+        Container(engine, "Points Engine", "Java", "Calculates and awards points")
+        ContainerDb(db, "Database", "PostgreSQL", "Member and points data")
+        Container(cache, "Cache", "Redis", "Member rewards cache")
+    }
+    System_Ext(crm, "CRM System", "Customer profiles")
+    
+    Rel(web, api, "REST")
+    Rel(api, engine, "RPC")
+    Rel(engine, db, "Reads/Writes")
+    Rel(api, cache, "Reads/Writes")
+    Rel(api, crm, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Customer Action] --> B[Earn Points]
+    B --> C[Redeem Rewards]
+    C --> D[Tier Benefits]
+    D --> E[Engagement]
+```
+
+## Features
+
+- Points system
+- Reward tiers
+- Points redemption
+- Member benefits
+- Referral rewards
+- Anniversary rewards
+- VIP programs
+- Engagement tracking

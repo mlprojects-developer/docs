@@ -1,0 +1,67 @@
+---
+title: "Expense Management"
+description: "Expense management"
+---
+
+# Expense Management
+
+Employee expense management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Expense Management System Context
+    Person(employee, "Employee", "Submits expenses")
+    Person(approver, "Manager", "Approves expenses")
+    System(expense, "Expense Platform", "Expense tracking")
+    System_Ext(finance, "Finance System", "Reimbursement")
+    System_Ext(email, "Email Service", "Notifications")
+    
+    Rel(employee, expense, "Submits")
+    Rel(approver, expense, "Reviews")
+    Rel(expense, finance, "Submits")
+    Rel(expense, email, "Sends updates")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Expense Platform Containers
+    System_Boundary(expense, "Expense Platform") {
+        Container(mobile, "Mobile App", "React Native", "Submit expenses")
+        Container(approval, "Approval Portal", "React", "Review expenses")
+        Container(api, "API Server", "Node.js", "Expense logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Expense data")
+        Container(ocr, "Receipt Parser", "Python", "Extract receipt data")
+    }
+    System_Ext(finance, "Finance", "SAP")
+    
+    Rel(mobile, api, "REST")
+    Rel(approval, api, "REST")
+    Rel(api, ocr, "Processes")
+    Rel(ocr, db, "Stores")
+    Rel(api, finance, "Syncs")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Submit] --> B[Review]
+    B --> C[Approve]
+    C --> D[Reimburse]
+    D --> E[Archive]
+```
+
+## Features
+
+- Expense submission
+- Receipt capture
+- Expense policies
+- Approval workflows
+- Multi-currency support
+- Policy enforcement
+- Reimbursement processing
+- Expense analytics

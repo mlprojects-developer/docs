@@ -1,0 +1,67 @@
+---
+title: "Field Service"
+description: "Field service management"
+---
+
+# Field Service
+
+Field service operations management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Field Service System Context
+    Person(tech, "Field Technician", "Performs service")
+    Person(dispatcher, "Dispatcher", "Schedules work")
+    System(fs, "Field Service Platform", "Service management")
+    System_Ext(crm, "CRM System", "Customer data")
+    System_Ext(gps, "GPS Provider", "Location tracking")
+    
+    Rel(tech, fs, "Updates")
+    Rel(dispatcher, fs, "Dispatches")
+    Rel(fs, crm, "Syncs")
+    Rel(fs, gps, "Tracks")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Field Service Platform Containers
+    System_Boundary(fs, "Field Service Platform") {
+        Container(mobile, "Technician App", "React Native", "Mobile work")
+        Container(dispatch, "Dispatcher Portal", "React", "Schedule work")
+        Container(api, "API Server", "Node.js", "Service logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Service data")
+        Container(routing, "Route Optimizer", "Python", "Optimize routes")
+    }
+    System_Ext(gps, "Maps", "Google Maps")
+    
+    Rel(mobile, api, "REST")
+    Rel(dispatch, api, "REST")
+    Rel(api, routing, "RPC")
+    Rel(routing, db, "Reads")
+    Rel(api, gps, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Request] --> B[Schedule]
+    B --> C[Dispatch]
+    C --> D[Execute]
+    D --> E[Complete]
+```
+
+## Features
+
+- Service scheduling
+- Technician dispatch
+- Real-time location tracking
+- Work order management
+- Mobile app
+- Parts inventory
+- Customer communication
+- Service analytics

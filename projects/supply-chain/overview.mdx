@@ -1,0 +1,67 @@
+---
+title: "Supply Chain"
+description: "Supply chain management"
+---
+
+# Supply Chain
+
+End-to-end supply chain management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Supply Chain System Context
+    Person(planner, "Supply Chain Manager", "Manages supply chain")
+    System(sc, "Supply Chain Platform", "Network and logistics")
+    System_Ext(suppliers, "Suppliers", "Supply data")
+    System_Ext(shipping, "Shipping Providers", "Logistics")
+    System_Ext(warehouse, "Warehouses", "Inventory")
+    
+    Rel(planner, sc, "Manages")
+    Rel(suppliers, sc, "Sends data")
+    Rel(sc, shipping, "Coordinates")
+    Rel(sc, warehouse, "Controls")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Supply Chain Platform Containers
+    System_Boundary(sc, "Supply Chain Platform") {
+        Container(network, "Network Planning", "React", "Optimize network")
+        Container(tracking, "Shipment Tracking", "React", "Track shipments")
+        Container(api, "API Server", "Node.js", "Supply chain logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Network and inventory")
+        Container(optimization, "Optimization Engine", "Python", "Route optimization")
+    }
+    System_Ext(wms, "WMS", "3PL Systems")
+    
+    Rel(network, api, "REST")
+    Rel(tracking, api, "REST")
+    Rel(api, optimization, "RPC")
+    Rel(optimization, db, "Reads")
+    Rel(api, wms, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Procurement] --> B[Manufacturing]
+    B --> C[Distribution]
+    C --> D[Delivery]
+    D --> E[Customer]
+```
+
+## Features
+
+- End-to-end visibility
+- Supplier management
+- Logistics management
+- Warehouse management
+- Inventory tracking
+- Performance analytics
+- Risk management
+- Sustainability tracking

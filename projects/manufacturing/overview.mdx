@@ -1,0 +1,67 @@
+---
+title: "Manufacturing"
+description: "Manufacturing management"
+---
+
+# Manufacturing
+
+Manufacturing operations management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Manufacturing System Context
+    Person(operator, "Equipment Operator", "Runs equipment")
+    Person(planner, "Production Planner", "Plans production")
+    System(mfg, "Manufacturing Platform", "Production execution")
+    System_Ext(erp, "ERP System", "Inventory and orders")
+    System_Ext(iot, "IoT Sensors", "Equipment data")
+    
+    Rel(operator, mfg, "Operates")
+    Rel(planner, mfg, "Plans")
+    Rel(mfg, erp, "Syncs")
+    Rel(mfg, iot, "Collects")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Manufacturing Platform Containers
+    System_Boundary(mfg, "Manufacturing Platform") {
+        Container(shop_floor, "Shop Floor App", "React", "Equipment control")
+        Container(planning, "Production Planning", "React", "Schedule planning")
+        Container(api, "API Server", "Node.js", "MES logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Production data")
+        Container(iot_svc, "IoT Service", "Python", "Equipment monitoring")
+    }
+    System_Ext(iot, "Equipment", "MQTT")
+    
+    Rel(shop_floor, api, "REST")
+    Rel(planning, api, "REST")
+    Rel(api, iot_svc, "RPC")
+    Rel(iot_svc, db, "Writes")
+    Rel(iot_svc, iot, "Subscribes")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Plan] --> B[Produce]
+    B --> C[QC]
+    C --> D[Package]
+    D --> E[Ship]
+```
+
+## Features
+
+- Production planning
+- Work order management
+- Machine scheduling
+- Quality control
+- Equipment tracking
+- Maintenance management
+- Batch tracking
+- Production analytics

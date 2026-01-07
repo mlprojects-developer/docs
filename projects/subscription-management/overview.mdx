@@ -1,0 +1,68 @@
+---
+title: "Subscription Management"
+description: "Customer subscription management"
+---
+
+# Subscription Management
+
+Subscription plans and lifecycle management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Subscription Management System Context
+    Person(customer, "Subscriber", "Manages their subscription")
+    System(subs, "Subscription Platform", "Plans and billing management")
+    System_Ext(billing, "Billing System", "Invoice generation")
+    System_Ext(payment, "Payment Gateway", "Processes payments")
+    System_Ext(email, "Email Service", "Renewal notifications")
+    
+    Rel(customer, subs, "Manages")
+    Rel(subs, billing, "Creates invoices")
+    Rel(subs, payment, "Charges customer")
+    Rel(subs, email, "Sends notifications")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Subscription Platform Containers
+    System_Boundary(subs, "Subscription Platform") {
+        Container(portal, "Customer Portal", "React", "Manage subscriptions")
+        Container(api, "API Server", "Node.js", "Subscription logic")
+        Container(billing, "Billing Engine", "Python", "Generates invoices")
+        ContainerDb(db, "Database", "PostgreSQL", "Subscription data")
+        Container(queue, "Job Queue", "RabbitMQ", "Renewal processing")
+    }
+    System_Ext(payment, "Payment Provider", "Stripe")
+    
+    Rel(portal, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(api, queue, "Publishes")
+    Rel(queue, billing, "Processes")
+    Rel(billing, payment, "Charges")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Subscribe] --> B[Active]
+    B --> C[Renewal]
+    C --> D[Upgrade/Downgrade]
+    D --> B
+    B --> E[Churn]
+```
+
+## Features
+
+- Subscription plans
+- Recurring billing
+- Plan upgrades
+- Plan downgrades
+- Pause subscriptions
+- Cancellation management
+- Renewal tracking
+- Churn prevention

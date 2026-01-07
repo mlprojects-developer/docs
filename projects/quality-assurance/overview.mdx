@@ -1,0 +1,67 @@
+---
+title: "Quality Assurance"
+description: "Quality management"
+---
+
+# Quality Assurance
+
+Quality assurance and management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Quality Assurance System Context
+    Person(qa, "QA Engineer", "Tests software")
+    Person(manager, "QA Manager", "Manages QA")
+    System(qa_sys, "QA Platform", "Test management")
+    System_Ext(dev, "Development", "Build artifacts")
+    System_Ext(bug_track, "Issue Tracker", "Bug tracking")
+    
+    Rel(qa, qa_sys, "Executes tests")
+    Rel(manager, qa_sys, "Manages")
+    Rel(qa_sys, dev, "Gets builds")
+    Rel(qa_sys, bug_track, "Logs issues")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title QA Platform Containers
+    System_Boundary(qa_sys, "QA Platform") {
+        Container(portal, "Test Management", "React", "Manage test cases")
+        Container(automation, "Automation Engine", "Java", "Run automated tests")
+        Container(api, "API Server", "Node.js", "QA operations")
+        ContainerDb(db, "Database", "PostgreSQL", "Test data")
+        Container(reporting, "Report Generator", "Python", "Test reports")
+    }
+    System_Ext(ci, "CI/CD", "Jenkins")
+    
+    Rel(portal, api, "REST")
+    Rel(automation, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(reporting, db, "Reads")
+    Rel(api, ci, "Webhook")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Plan] --> B[Check]
+    B --> C[Test]
+    C --> D[Verify]
+    D --> E[Release]
+```
+
+## Features
+
+- Test planning
+- Test execution
+- Defect tracking
+- Quality metrics
+- Issue management
+- Release management
+- Documentation
+- Compliance testing

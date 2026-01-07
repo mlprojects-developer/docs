@@ -1,0 +1,67 @@
+---
+title: "Asset Management"
+description: "Asset lifecycle management"
+---
+
+# Asset Management
+
+Asset lifecycle and tracking.
+
+## System Context
+
+```mermaid
+C4Context
+    title Asset Management System Context
+    Person(user, "Asset Owner", "Manages assets")
+    System(am, "Asset Platform", "Asset lifecycle")
+    System_Ext(finance, "Finance System", "Depreciation")
+    System_Ext(maintenance, "Maintenance System", "Work orders")
+    System_Ext(gps, "GPS Service", "Asset location")
+    
+    Rel(user, am, "Manages")
+    Rel(am, finance, "Syncs")
+    Rel(am, maintenance, "Integrates")
+    Rel(am, gps, "Tracks")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Asset Platform Containers
+    System_Boundary(am, "Asset Platform") {
+        Container(portal, "Asset Portal", "React", "Manage assets")
+        Container(mobile, "Mobile App", "React Native", "Scan and report")
+        Container(api, "API Server", "Node.js", "Asset operations")
+        ContainerDb(db, "Database", "PostgreSQL", "Asset data")
+        Container(analytics, "Lifecycle Analytics", "Python", "ROI analysis")
+    }
+    System_Ext(gps, "Location Tracking", "GPS")
+    
+    Rel(portal, api, "REST")
+    Rel(mobile, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(analytics, db, "Reads")
+    Rel(api, gps, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Acquire] --> B[Track]
+    B --> C[Maintain]
+    C --> D[Dispose]
+    D --> E[Report]
+```
+
+## Features
+
+- Asset registry
+- Lifecycle tracking
+- Depreciation calculation
+- Maintenance schedules
+- Location tracking
+- Barcode/RFID tagging
+- Compliance tracking
+- Asset analytics

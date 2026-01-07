@@ -1,0 +1,67 @@
+---
+title: "Finance & Accounting"
+description: "Finance and accounting management"
+---
+
+# Finance & Accounting
+
+Finance and accounting management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Finance & Accounting System Context
+    Person(accountant, "Accountant", "Records transactions")
+    Person(manager, "Finance Manager", "Manages finances")
+    System(fa, "Finance Platform", "Accounting and reporting")
+    System_Ext(bank, "Bank", "Transaction data")
+    System_Ext(tax, "Tax Authority", "Compliance reporting")
+    
+    Rel(accountant, fa, "Records")
+    Rel(manager, fa, "Reviews")
+    Rel(fa, bank, "Imports transactions")
+    Rel(fa, tax, "Submits reports")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Finance Platform Containers
+    System_Boundary(fa, "Finance Platform") {
+        Container(gl, "General Ledger", "React", "Chart of accounts")
+        Container(reports, "Reports Portal", "React", "Financial reports")
+        Container(api, "API Server", "Node.js", "Finance logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Ledger data")
+        Container(engine, "Calculation Engine", "Python", "Consolidation")
+    }
+    System_Ext(bank, "Bank Connection", "OFX")
+    
+    Rel(gl, api, "REST")
+    Rel(reports, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(engine, db, "Reads")
+    Rel(api, bank, "Imports")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Transactions] --> B[Record]
+    B --> C[Analyze]
+    C --> D[Report]
+    D --> E[Comply]
+```
+
+## Features
+
+- General ledger
+- Accounts payable
+- Accounts receivable
+- Expense management
+- Fixed assets
+- Financial reporting
+- Tax compliance
+- Audit trails

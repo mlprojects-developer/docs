@@ -1,0 +1,67 @@
+---
+title: "Procurement"
+description: "Procurement management"
+---
+
+# Procurement
+
+Procurement and purchasing management.
+
+## System Context
+
+```mermaid
+C4Context
+    title Procurement System Context
+    Person(requester, "Requester", "Requests purchases")
+    Person(approver, "Approver", "Approves requests")
+    System(procure, "Procurement Platform", "Purchase management")
+    System_Ext(vendor, "Vendor Systems", "Supplier data")
+    System_Ext(erp, "ERP System", "Financial data")
+    
+    Rel(requester, procure, "Requests")
+    Rel(approver, procure, "Approves")
+    Rel(procure, vendor, "Communicates")
+    Rel(procure, erp, "Syncs")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Procurement Platform Containers
+    System_Boundary(procure, "Procurement Platform") {
+        Container(portal, "User Portal", "React", "Submit requests")
+        Container(approval, "Approval Workflow", "React", "Review and approve")
+        Container(api, "API Gateway", "Node.js", "Procurement logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Requests and orders")
+        Container(sourcing, "Sourcing Engine", "Python", "Vendor selection")
+    }
+    System_Ext(erp, "ERP", "Oracle")
+    
+    Rel(portal, api, "REST")
+    Rel(approval, api, "REST")
+    Rel(api, sourcing, "RPC")
+    Rel(sourcing, db, "Reads/Writes")
+    Rel(api, erp, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Request] --> B[Approve]
+    B --> C[Purchase Order]
+    C --> D[Receive]
+    D --> E[Invoice]
+```
+
+## Features
+
+- Purchase requisitions
+- Approval workflows
+- Vendor selection
+- RFQ management
+- Purchase orders
+- Receiving process
+- Invoice matching
+- Payment processing

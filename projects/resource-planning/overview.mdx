@@ -1,0 +1,67 @@
+---
+title: "Resource Planning"
+description: "Resource management"
+---
+
+# Resource Planning
+
+Enterprise resource planning.
+
+## System Context
+
+```mermaid
+C4Context
+    title Resource Planning System Context
+    Person(manager, "Project Manager", "Plans resources")
+    Person(resource, "Resource", "Views assignments")
+    System(rp, "Resource Platform", "Resource allocation")
+    System_Ext(projects, "Project System", "Project data")
+    System_Ext(hr, "HR System", "Employee data")
+    
+    Rel(manager, rp, "Plans")
+    Rel(resource, rp, "Views")
+    Rel(rp, projects, "Syncs")
+    Rel(rp, hr, "Imports")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Resource Platform Containers
+    System_Boundary(rp, "Resource Platform") {
+        Container(planning, "Planning Portal", "React", "Allocate resources")
+        Container(dashboard, "Resource Dashboard", "React", "Capacity view")
+        Container(api, "API Server", "Node.js", "Planning logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Allocation data")
+        Container(forecast, "Forecast Engine", "Python", "Demand forecasting")
+    }
+    System_Ext(projects, "Projects", "Jira")
+    
+    Rel(planning, api, "REST")
+    Rel(dashboard, api, "REST")
+    Rel(api, forecast, "RPC")
+    Rel(forecast, db, "Reads")
+    Rel(api, projects, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Demand] --> B[Plan]
+    B --> C[Allocate]
+    C --> D[Track]
+    D --> E[Optimize]
+```
+
+## Features
+
+- Resource inventory
+- Capacity planning
+- Demand forecasting
+- Resource allocation
+- Utilization tracking
+- Skill mapping
+- Availability calendars
+- Resource optimization

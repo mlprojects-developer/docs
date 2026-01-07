@@ -1,0 +1,67 @@
+---
+title: "Contract Management"
+description: "Contract lifecycle management"
+---
+
+# Contract Management
+
+Contract management and lifecycle.
+
+## System Context
+
+```mermaid
+C4Context
+    title Contract Management System Context
+    Person(user, "Contract Manager", "Manages contracts")
+    System(cm, "Contract Platform", "Contract lifecycle management")
+    System_Ext(esign, "E-Signature Service", "Digital signatures")
+    System_Ext(email, "Email Service", "Notifications")
+    System_Ext(storage, "Cloud Storage", "Contract storage")
+    
+    Rel(user, cm, "Manages")
+    Rel(cm, esign, "Sends for signature")
+    Rel(cm, email, "Sends reminders")
+    Rel(cm, storage, "Stores contracts")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Contract Management Platform Containers
+    System_Boundary(cm, "Contract Platform") {
+        Container(web, "Contract Portal", "React", "Manage contracts")
+        Container(api, "API Gateway", "Node.js", "Contract operations")
+        Container(engine, "Workflow Engine", "Java", "Approval workflows")
+        ContainerDb(db, "Database", "PostgreSQL", "Contract data")
+        Container(extract, "Obligation Extractor", "Python", "NLP extraction")
+    }
+    System_Ext(esign, "E-Signature", "DocuSign")
+    
+    Rel(web, api, "REST")
+    Rel(api, engine, "RPC")
+    Rel(engine, db, "Reads/Writes")
+    Rel(api, extract, "Submits")
+    Rel(api, esign, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Create] --> B[Review]
+    B --> C[Sign]
+    C --> D[Execute]
+    D --> E[Renew/End]
+```
+
+## Features
+
+- Contract templates
+- Authoring tools
+- Workflow management
+- E-signature integration
+- Version tracking
+- Obligation tracking
+- Renewal management
+- Risk analysis

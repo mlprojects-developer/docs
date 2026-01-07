@@ -1,0 +1,67 @@
+---
+title: "Marketplace"
+description: "Multi-vendor marketplace"
+---
+
+# Marketplace
+
+Multi-vendor marketplace platform.
+
+## System Context
+
+```mermaid
+C4Context
+    title Marketplace System Context
+    Person(seller, "Seller", "Lists and sells products")
+    Person(buyer, "Buyer", "Discovers and purchases")
+    System(market, "Marketplace Platform", "Multi-vendor marketplace")
+    System_Ext(payment, "Payment Provider", "Processes transactions")
+    System_Ext(shipping, "Shipping Provider", "Logistics")
+    
+    Rel(seller, market, "Manages inventory")
+    Rel(buyer, market, "Browses and buys")
+    Rel(market, payment, "Processes payments")
+    Rel(market, shipping, "Coordinates shipping")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Marketplace Platform Containers
+    System_Boundary(market, "Marketplace Platform") {
+        Container(buyer_app, "Buyer App", "React", "Shopping interface")
+        Container(seller_app, "Seller App", "React", "Inventory management")
+        Container(api, "API Gateway", "Node.js", "Business logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Products and orders")
+        Container(search, "Search Engine", "Elasticsearch", "Product search")
+    }
+    System_Ext(payment, "Payment Gateway", "Stripe")
+    
+    Rel(buyer_app, api, "REST")
+    Rel(seller_app, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(api, search, "Indexes/Queries")
+    Rel(api, payment, "Processes")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Sellers] --> B[Marketplace]
+    C[Buyers] --> B
+    B --> D[Transactions]
+    D --> E[Commission]
+```
+
+## Features
+
+- Seller onboarding
+- Product listings
+- Buyer discovery
+- Order management
+- Commission tracking
+- Ratings and reviews
+- Dispute resolution
+- Payment disbursement

@@ -1,0 +1,67 @@
+---
+title: "Knowledge Management"
+description: "Knowledge base and content"
+---
+
+# Knowledge Management
+
+Enterprise knowledge management system.
+
+## System Context
+
+```mermaid
+C4Context
+    title Knowledge Management System Context
+    Person(user, "User", "Searches and reads content")
+    Person(author, "Author", "Creates and publishes content")
+    System(km, "Knowledge Platform", "Content management and discovery")
+    System_Ext(ldap, "Directory Service", "User authentication")
+    System_Ext(email, "Email Service", "Notifications")
+    
+    Rel(user, km, "Searches")
+    Rel(author, km, "Publishes")
+    Rel(km, ldap, "Authenticates")
+    Rel(km, email, "Sends updates")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Knowledge Platform Containers
+    System_Boundary(km, "Knowledge Platform") {
+        Container(web, "Web Portal", "React", "Browse and search")
+        Container(editor, "Content Editor", "React", "Create and edit")
+        Container(api, "API Server", "Node.js", "Business logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Content storage")
+        Container(search, "Search Index", "Elasticsearch", "Full-text search")
+    }
+    System_Ext(auth, "Auth Service", "LDAP/OAuth")
+    
+    Rel(web, api, "REST")
+    Rel(editor, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(api, search, "Indexes")
+    Rel(api, auth, "Validates")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Content] --> B[Organize]
+    B --> C[Search]
+    C --> D[Discover]
+    D --> E[Learn]
+```
+
+## Features
+
+- Document repository
+- Wiki pages
+- Topic organization
+- Full-text search
+- Tagging system
+- Version control
+- Access permissions
+- Collaboration tools

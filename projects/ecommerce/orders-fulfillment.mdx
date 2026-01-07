@@ -1,0 +1,28 @@
+---
+title: "Orders & Fulfillment"
+description: "Order processing and fulfillment"
+---
+
+# Orders & Fulfillment
+
+Process and fulfill customer orders.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Processing
+    Processing --> Shipped
+    Shipped --> Delivered
+    Delivered --> [*]
+```
+
+## Capabilities
+
+- Order management
+- Order status tracking
+- Shipment tracking
+- Return processing
+- Refund management
+- Order confirmation
+- Customer notifications
+- Fulfillment workflows

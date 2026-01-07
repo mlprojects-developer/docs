@@ -1,0 +1,67 @@
+---
+title: "Document Management"
+description: "Enterprise document management"
+---
+
+# Document Management
+
+Enterprise document management system.
+
+## System Context
+
+```mermaid
+C4Context
+    title Document Management System Context
+    Person(user, "User", "Creates and shares documents")
+    System(dms, "Document Platform", "Centralized document storage")
+    System_Ext(storage, "Cloud Storage", "File storage")
+    System_Ext(ldap, "Directory Service", "User management")
+    System_Ext(email, "Email Service", "Share notifications")
+    
+    Rel(user, dms, "Manages")
+    Rel(dms, storage, "Stores files")
+    Rel(dms, ldap, "Authenticates")
+    Rel(dms, email, "Sends notifications")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Document Management Platform Containers
+    System_Boundary(dms, "Document Platform") {
+        Container(web, "Web Interface", "React", "Browse and edit")
+        Container(api, "API Gateway", "Node.js", "Document operations")
+        Container(processor, "Document Processor", "Python", "OCR and indexing")
+        ContainerDb(db, "Metadata DB", "PostgreSQL", "Document metadata")
+        Container(search, "Search Engine", "Elasticsearch", "Full-text search")
+    }
+    System_Ext(storage, "Cloud Storage", "S3")
+    
+    Rel(web, api, "REST")
+    Rel(api, db, "Reads/Writes")
+    Rel(api, storage, "Upload/Download")
+    Rel(processor, search, "Indexes")
+    Rel(api, processor, "Submits")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Create] --> B[Store]
+    B --> C[Retrieve]
+    C --> D[Share]
+    D --> E[Archive]
+```
+
+## Features
+
+- Document storage
+- Version control
+- Metadata tagging
+- Full-text indexing
+- Access controls
+- Audit trails
+- Digital signatures
+- Document retention

@@ -1,0 +1,67 @@
+---
+title: "Demand Planning"
+description: "Demand forecasting"
+---
+
+# Demand Planning
+
+Demand forecasting and planning.
+
+## System Context
+
+```mermaid
+C4Context
+    title Demand Planning System Context
+    Person(planner, "Demand Planner", "Forecasts demand")
+    System(dp, "Demand Platform", "Forecasting and planning")
+    System_Ext(sales, "Sales System", "Historical sales")
+    System_Ext(supply, "Supply Chain", "Inventory levels")
+    System_Ext(market, "Market Data", "Trends")
+    
+    Rel(planner, dp, "Plans")
+    Rel(dp, sales, "Imports")
+    Rel(dp, supply, "Syncs")
+    Rel(dp, market, "Fetches")
+```
+
+## System Containers
+
+```mermaid
+C4Container
+    title Demand Platform Containers
+    System_Boundary(dp, "Demand Platform") {
+        Container(portal, "Planning Portal", "React", "View forecasts")
+        Container(collab, "Collaboration Tool", "React", "S&OP meetings")
+        Container(api, "API Server", "Node.js", "Planning logic")
+        ContainerDb(db, "Database", "PostgreSQL", "Forecast data")
+        Container(ml, "Forecast Engine", "Python", "ML-based forecasting")
+    }
+    System_Ext(sales, "Sales", "Salesforce")
+    
+    Rel(portal, api, "REST")
+    Rel(collab, api, "REST")
+    Rel(api, ml, "RPC")
+    Rel(ml, db, "Reads/Writes")
+    Rel(api, sales, "API calls")
+```
+
+## Overview
+
+```mermaid
+graph LR
+    A[Historical Data] --> B[Forecast]
+    B --> C[Analyze]
+    C --> D[Plan]
+    D --> E[Execute]
+```
+
+## Features
+
+- Demand forecasting
+- Seasonality analysis
+- Trend analysis
+- Scenario planning
+- Inventory planning
+- Supply planning
+- Collaboration tools
+- Forecast accuracy tracking
