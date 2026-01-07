@@ -1,0 +1,268 @@
+---
+title: "CopilotKit setup"
+description: "Configure CopilotKit for your documentation workflow"
+icon: "plane"
+---
+
+Use CopilotKit to build AI-powered copilots into your documentation workflow. This guide shows how to integrate CopilotKit for enhanced documentation assistance and interactive AI features.
+
+## Prerequisites
+
+- Node.js 16+ installed
+- Access to your documentation repository
+- OpenAI API key or compatible LLM provider
+
+## Installation
+
+Install CopilotKit in your documentation project:
+
+```bash
+npm install @copilotkit/react-core @copilotkit/react-ui
+```
+
+## Basic setup
+
+Configure CopilotKit in your application:
+
+<Steps>
+<Step title="Create API route">
+  Create an API endpoint to handle CopilotKit requests.
+  
+  ```typescript app/api/copilotkit/route.ts
+  import { CopilotRuntime, OpenAIAdapter } from "@copilotkit/runtime";
+  import OpenAI from "openai";
+  
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+  
+  export async function POST(req: Request) {
+    const copilotKit = new CopilotRuntime();
+    return copilotKit.response(req, new OpenAIAdapter({ openai }));
+  }
+  ```
+  
+  <Warning>
+  Never commit API keys to version control. Use environment variables.
+  </Warning>
+</Step>
+
+<Step title="Add CopilotKit provider">
+  Wrap your application with the CopilotKit provider.
+  
+  ```tsx app/layout.tsx
+  import { CopilotKit } from "@copilotkit/react-core";
+  
+  export default function RootLayout({ children }) {
+    return (
+      <CopilotKit runtimeUrl="/api/copilotkit">
+        {children}
+      </CopilotKit>
+    );
+  }
+  ```
+</Step>
+
+<Step title="Add UI components">
+  Include CopilotKit UI components where needed.
+  
+  ```tsx app/page.tsx
+  import { CopilotPopup } from "@copilotkit/react-ui";
+  import "@copilotkit/react-ui/styles.css";
+  
+  export default function Page() {
+    return (
+      <>
+        <YourDocumentation />
+        <CopilotPopup
+          instructions="You are a documentation assistant. Help users understand and navigate the documentation."
+          labels={{
+            title: "Documentation Assistant",
+            initial: "Hi! How can I help with the documentation?",
+          }}
+        />
+      </>
+    );
+  }
+  ```
+  
+  <Check>
+  The copilot popup should now appear in your application.
+  </Check>
+</Step>
+</Steps>
+
+## Documentation-specific features
+
+### Context-aware assistance
+
+Provide documentation context to the copilot:
+
+```tsx
+import { useCopilotReadable } from "@copilotkit/react-core";
+
+function DocumentationPage({ content, metadata }) {
+  useCopilotReadable({
+    description: "Current documentation page content",
+    value: content,
+  });
+  
+  useCopilotReadable({
+    description: "Page metadata and navigation context",
+    value: metadata,
+  });
+  
+  return <div>{content}</div>;
+}
+```
+
+### Custom actions
+
+Add documentation-specific actions:
+
+```tsx
+import { useCopilotAction } from "@copilotkit/react-core";
+
+function useDocumentationActions() {
+  useCopilotAction({
+    name: "searchDocumentation",
+    description: "Search through documentation pages",
+    parameters: [
+      {
+        name: "query",
+        type: "string",
+        description: "Search query",
+        required: true,
+      },
+    ],
+    handler: async ({ query }) => {
+      const results = await searchDocs(query);
+      return results;
+    },
+  });
+  
+  useCopilotAction({
+    name: "suggestRelatedPages",
+    description: "Suggest related documentation pages",
+    parameters: [
+      {
+        name: "currentPage",
+        type: "string",
+        description: "Current page path",
+        required: true,
+      },
+    ],
+    handler: async ({ currentPage }) => {
+      const related = await getRelatedPages(currentPage);
+      return related;
+    },
+  });
+}
+```
+
+## Advanced configuration
+
+### Custom LLM providers
+
+Use alternative LLM providers:
+
+<Tabs>
+<Tab title="Anthropic">
+  ```typescript
+  import { CopilotRuntime, AnthropicAdapter } from "@copilotkit/runtime";
+  import Anthropic from "@anthropic-ai/sdk";
+  
+  const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY,
+  });
+  
+  export async function POST(req: Request) {
+    const copilotKit = new CopilotRuntime();
+    return copilotKit.response(req, new AnthropicAdapter({ anthropic }));
+  }
+  ```
+</Tab>
+
+<Tab title="Azure OpenAI">
+  ```typescript
+  import { CopilotRuntime, OpenAIAdapter } from "@copilotkit/runtime";
+  import { AzureOpenAI } from "openai";
+  
+  const azure = new AzureOpenAI({
+    apiKey: process.env.AZURE_OPENAI_API_KEY,
+    endpoint: process.env.AZURE_OPENAI_ENDPOINT,
+    deployment: process.env.AZURE_OPENAI_DEPLOYMENT,
+  });
+  
+  export async function POST(req: Request) {
+    const copilotKit = new CopilotRuntime();
+    return copilotKit.response(req, new OpenAIAdapter({ openai: azure }));
+  }
+  ```
+</Tab>
+</Tabs>
+
+### Styling customization
+
+Customize the copilot appearance:
+
+```tsx
+<CopilotPopup
+  instructions="You are a documentation assistant."
+  labels={{
+    title: "Docs Assistant",
+    initial: "How can I help?",
+  }}
+  defaultOpen={false}
+  clickOutsideToClose={true}
+  className="custom-copilot"
+/>
+```
+
+Add custom styles:
+
+```css
+.custom-copilot {
+  --copilot-kit-primary-color: #3b82f6;
+  --copilot-kit-background-color: #ffffff;
+  --copilot-kit-text-color: #1f2937;
+  --copilot-kit-border-radius: 0.75rem;
+}
+```
+
+## Best practices
+
+<AccordionGroup>
+<Accordion title="Optimize context size">
+  - Only provide relevant documentation context to avoid token limits
+  - Use `useCopilotReadable` strategically for current page content
+  - Implement pagination for large documentation sets
+  - Cache frequently accessed content
+</Accordion>
+
+<Accordion title="Security considerations">
+  - Store API keys in environment variables
+  - Implement rate limiting on API routes
+  - Validate user inputs before processing
+  - Use server-side API routes to protect credentials
+</Accordion>
+
+<Accordion title="Performance optimization">
+  - Lazy load CopilotKit components
+  - Implement streaming responses for faster interactions
+  - Use edge functions for lower latency
+  - Monitor token usage and costs
+</Accordion>
+</AccordionGroup>
+
+## Resources
+
+<CardGroup cols={2}>
+<Card title="CopilotKit documentation" icon="book" href="https://docs.copilotkit.ai">
+  Official CopilotKit documentation and API reference.
+</Card>
+
+<Card title="Example implementations" icon="code" href="https://github.com/CopilotKit/CopilotKit/tree/main/examples">
+  Sample projects and integration examples.
+</Card>
+</CardGroup>
